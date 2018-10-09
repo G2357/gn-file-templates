@@ -81,7 +81,10 @@ Here is sample "template.json" file:
 At this moment only these variables are supported:
 * $fileinputname$ - whole text entered into "Name" text box in template selection page
 * $itemname$ - $fileinputname$ without file extension
-* $safeitemname$" - $itemname$ with all non alphanumeric characters removed. It is usually used to specify class, function or variable name inside source files      
+* $safeitemname$" - $itemname$ with all non alphanumeric characters removed. It is usually used to specify class, function or variable name inside source files
+* $uppercasetemplatename$
+* $pascalcasetemplatename$
+* $naturalitemname$
 
 ## Extension Settings
 

@@ -13,6 +13,23 @@ export class StringHelper {
         return text;
     }
 
+    static camelCaseToUpperCase(text : string) : string {
+        text = text.replace(/([A-Z]+)/g, '_$1');
+        text = text.toUpperCase();
+        return text;
+    }
+
+    static camelCaseToPascalCase(text : string) : string {
+        text = text.replace(/(^[a-z])/, u => u.toUpperCase());
+        return text;
+    }
+
+    static camelCaseToNaturalString(text : string) : string {
+        text = text.replace(/([A-Z]+)/g, ' $1');
+        text = text.replace(/([A-Z]+)/g, u => u.toLowerCase());
+        return text;
+    }
+
     static replaceText(text : string, replacements : StringReplacement[]) : string {
         let pos : number = 0;
         while (pos < text.length) {

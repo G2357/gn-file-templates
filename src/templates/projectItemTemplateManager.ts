@@ -118,10 +118,16 @@ export class ProjectItemTemplateManager {
         replList.push(new StringReplacement("\\$fileinputname$", "$fileinputname$"));
         replList.push(new StringReplacement("\\$itemname$", "$itemname$"));
         replList.push(new StringReplacement("\\$safeitemname$", "$safeitemname$"));       
+        replList.push(new StringReplacement("\\$uppercasetemplatename$", "$uppercasetemplatename$"));       
+        replList.push(new StringReplacement("\\$pascalcasetemplatename$", "$pascalcasetemplatename$"));       
+        replList.push(new StringReplacement("\\$naturalitemname$", "$naturalitemname$"));       
 
         replList.push(new StringReplacement("$fileinputname$", inputName));
         replList.push(new StringReplacement("$itemname$", name));
         replList.push(new StringReplacement("$safeitemname$", StringHelper.toSafeName(name)));       
+        replList.push(new StringReplacement("$uppercasetemplatename$", StringHelper.camelCaseToUpperCase(name)));       
+        replList.push(new StringReplacement("$pascalcasetemplatename$", StringHelper.camelCaseToPascalCase(name)));       
+        replList.push(new StringReplacement("$naturalitemname$", StringHelper.camelCaseToNaturalString(name)));       
         
         let templateSettings = new ProjectItemTemplateRunSettings(destPath, replList); 
 
